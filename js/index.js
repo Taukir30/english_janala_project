@@ -64,7 +64,7 @@ const showWords = (words)=>{
                                 <h2 class="text-xl font-bold siliguri text-gray-600 my-5">"${word.meaning? word.meaning:"not found"} / ${word.pronunciation? word.pronunciation:"not found"}"</h2>
                                 <div class="card_bottom flex justify-between mt-5">
                                     <div onclick="loadDetail(${word.id})" class="btn_left p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-circle-info"></i></div>
-                                    <div class="btn_right p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-volume-high"></i></div>
+                                    <div onclick="pronounceWord('${word.word}')" class="btn_right p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-volume-high"></i></div>
                                 </div>
                             </div>`;
     }
@@ -124,3 +124,12 @@ const showDetail = (details) => {
 const synonyms = (arr) => {
     return arr.map( syno => `<span class="px-3 py-1 bg-gray-100 border rounded-md text-sm text-gray-700">${syno}</span>` ).join("");
 }
+
+//speaker function
+function pronounceWord(word) {
+    const utterance = new SpeechSynthesisUtterance(word);
+    utterance.lang = "en-EN"; // English
+    window.speechSynthesis.speak(utterance);
+}
+
+// spiner, search add korte hobe module-33.9, 33.10, 33.11

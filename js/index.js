@@ -14,7 +14,7 @@ const showLevels = (levels)=>{
     for( let level of levels ){                                         //looping the data array
 
         let btnDiv = document.createElement('div');                     //creating buttons
-        btnDiv.innerHTML = `<button onclick="loadWords(${level.level_no})" class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]">
+        btnDiv.innerHTML = `<button onclick="loadWords(${level.level_no})" class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] focus:bg-[#c1b8ff] border-[#422AD5]">
                                 <i class="fa-solid fa-book-open"></i>
                                 Lesson -${level.level_no}
                             </button>`
@@ -36,7 +36,12 @@ const showWords = (words)=>{
     let cardHolder = document.createElement('div');
     cardHolder.classList.add('card_holder', 'w-full', 'grid', 'grid-cols-1', 'md:grid-cols-3', 'gap-5');
     
-    console.log(words)
+    // console.log(words.length)
+    if( words.length === 0 ){
+        wordContainer.innerHTML = `<img src="./assets/alert-error.png" alt="error" class="my-5 mx-auto">
+                                <p class="text-xs text-gray-600 p-5">আপনি এখনো কোন Lesson Select করেন নি</p>
+                                <h2 class="mb-5 text-2xl font-semibold">একটি Lesson Select করুন।</h2>`;
+    }
     for( let word of words ){
 
         cardHolder.innerHTML += `<div class="card bg-white p-8">
@@ -48,7 +53,6 @@ const showWords = (words)=>{
                                     <div class="btn_right p-2 bg-gray-200 hover:cursor-pointer rounded-md"><i class="fa-solid fa-volume-high"></i></div>
                                 </div>
                             </div>`;
-        console.log(1)
 
     }
 

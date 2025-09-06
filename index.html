@@ -51,16 +51,19 @@
             <div class="navbar-end hidden lg:flex ">
                 <ul class="menu menu-horizontal flex gap-4 px-10">
                     <li>
-                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-circle-question"></i>FAQ</a>                        
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i
+                                class="fa-solid fa-circle-question"></i>FAQ</a>
                     </li>
                     <li>
-                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-book-open"></i>Learn</a>
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i
+                                class="fa-solid fa-book-open"></i>Learn</a>
                     </li>
                     <li>
-                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i
+                                class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
                     </li>
                 </ul>
-            </div>         
+            </div>
         </div>
     </header>
     <!-- end topbar-------- -->
@@ -70,11 +73,15 @@
         <div class="wrapper flex gap-5 flex-col-reverse md:flex-row">
             <div class="content flex flex-col gap-5 justify-center text-center md:text-left w-full md:w-1/2">
                 <h1 class="text-3xl font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
-                <p class="siliguri w-full md:w-5/6 text-base/7 text-gray-800">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
-                <input type="text" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="name" id="" placeholder="Enter Your Name">
-                <input type="password" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="pass" id="" placeholder="********">
+                <p class="siliguri w-full md:w-5/6 text-base/7 text-gray-800">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু
+                    করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে
+                    অন্য একটি Level এ</p>
+                <input type="text" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="name"
+                    id="" placeholder="Enter Your Name">
+                <input type="password" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="pass"
+                    id="" placeholder="********">
                 <button class="btn btn-primary w-full md:w-1/5 text-xs font-light">Get Started</button>
-                
+
             </div>
             <div class="image w-full md:w-1/2">
                 <img src="./assets/hero-student.png" class="wrapper" alt="">
@@ -84,18 +91,18 @@
     <!-- /end banner-------- -->
 
     <!-- level button section------ -->
-     <section class="pt-15 my-5">
+    <section class="pt-15 my-5">
         <div class="wrapper">
             <h1 class="text-3xl font-bold text-center"><span class="text-[#00BCFF]">Let's </span>Learn Vocabularies</h1>
             <div id="level_container" class="level_container flex flex-wrap gap-5 justify-center my-5 py-5">
 
             </div>
         </div>
-     </section>
+    </section>
     <!-- /end level button section- -->
 
     <!-- lessons section------ -->
-     <section class="my-5">
+    <section class="my-5">
         <div id="word_container" class="wrapper text-center bg-gray-100 rounded-2xl p-5 ">
             <p class="mt-5 text-xs text-gray-600 p-5">আপনি এখনো কোন Lesson Select করেন নি</p>
             <h2 class="mb-5 text-2xl font-semibold">একটি Lesson Select করুন।</h2>
@@ -115,8 +122,18 @@
 
             </div>
         </div>
-     </section>
+    </section>
     <!-- /end lessons section------ -->
+
+    <!-- modal section------ -->
+    <!-- Open the modal using ID.showModal() method -->
+    <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+    <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+        <div id="modal_box" class="modal-box">
+            
+        </div>
+    </dialog>
+    <!-- /end modal section------ -->
 
 
 

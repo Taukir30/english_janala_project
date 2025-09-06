@@ -1,4 +1,4 @@
-//function for calling api
+//function for calling level api 
 const loadLevels = ()=>{
     fetch("https://openapi.programming-hero.com/api/levels/all")        //fetch with then chaining
         .then(res => res.json())
@@ -23,21 +23,21 @@ const showLevels = (levels)=>{
 }
 
 //function for calling words api 
-const loadWords = (id)=>{
-    fetch(`https://openapi.programming-hero.com/api/level/${id}`)
+const loadWords = (id)=>{                                               //taking input of button id as level no.
+    fetch(`https://openapi.programming-hero.com/api/level/${id}`)       //calling api as before
         .then( res => res.json() )
         .then( json => showWords(json.data) );
     
     // let btnLevel = document.getElementById(`btn_level${id}`);
     // console.log(btnLevel)
-    toggleActive(`btn_level${id}`);
+    toggleActive(`btn_level${id}`);                                     //calling toggleActive function with button id
 }
 
 //function for toggling active button class
-function toggleActive(id){
-    let levelBtns = document.querySelectorAll('.btn_levels');
-    levelBtns.forEach( btn => btn.classList.remove('active') );
-    document.getElementById(id).classList.add('active');
+function toggleActive(id){                                              //taking button id input
+    let levelBtns = document.querySelectorAll('.btn_levels');           //getting all level button using querySelectorAll
+    levelBtns.forEach( btn => btn.classList.remove('active') );         //looping through using forEach and removing active class
+    document.getElementById(id).classList.add('active');                //adding active class to the clicked button using id
 }
 
 //function for loading words into the dom according to the api data
@@ -63,15 +63,64 @@ const showWords = (words)=>{
                                 <p class="text-xs font-semibold ">Meaning /Pronounciation</p>
                                 <h2 class="text-xl font-bold siliguri text-gray-600 my-5">"${word.meaning? word.meaning:"not found"} / ${word.pronunciation? word.pronunciation:"not found"}"</h2>
                                 <div class="card_bottom flex justify-between mt-5">
-                                    <div class="btn_left p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-circle-info"></i></div>
+                                    <div onclick="loadDetail(${word.id})" class="btn_left p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-circle-info"></i></div>
                                     <div class="btn_right p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-volume-high"></i></div>
                                 </div>
                             </div>`;
-
     }
-
     wordContainer.append(cardHolder);                               //appending cardholder to dom
+}
 
-    
+//function for loading word detail from api
+const loadDetail = async(id) => {
+    let response = await fetch(`https://openapi.programming-hero.com/api/word/${id}`);
+    let detail = await response.json();
+    showDetail(detail.data);
+}
 
+//function for showing detail in modal
+const showDetail = (details) => {
+    let modalBox = document.getElementById('modal_box');
+
+    modalBox.innerHTML = `<div class="w-full bg-white rounded-xl p-6 space-y-4">
+                            <!-- Word Title -->
+                            <h2 class="text-xl font-bold text-gray-800">
+                                ${details.word} <span class="text-gray-500 text-lg">(${details.pronunciation})</span>
+                            </h2>
+
+                            <!-- Meaning -->
+                            <div>
+                                <p class="text-sm font-semibold text-black">Meaning</p>
+                                <p class="text-gray-800">${details.meaning}</p>
+                            </div>
+
+                            <!-- Example -->
+                            <div>
+                                <p class="text-sm font-semibold text-black">Example</p>
+                                <p class="text-gray-700">${details.sentence}</p>
+                            </div>
+
+                            <!-- Synonyms -->
+                            <div>
+                                <p class="text-sm font-semibold text-black mb-2">সমার্থক শব্দ গুলো</p>
+                                <div class="flex flex-wrap gap-2">
+                                    ${synonyms(details.synonyms)}
+                                </div>
+                            </div>
+
+                            <div class="modal-action">
+                                <form method="dialog">
+                                    <!-- if there is a button in form, it will close the modal -->
+                                    <button class="btn bg-[#422AD5] text-white">Complete Learning</button>
+                                </form>
+                            </div>
+                        </div>`
+
+    document.getElementById('word_modal').showModal()
+
+}
+
+//function for converting synonames from array to single string
+const synonyms = (arr) => {
+    return arr.map( syno => `<span class="px-3 py-1 bg-gray-100 border rounded-md text-sm text-gray-700">${syno}</span>` ).join("");
 }

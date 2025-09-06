@@ -14,3 +14,7 @@
     width: 93%;
     margin: 0 auto;
 }
+.active{
+    background-color: #422AD5;
+    color: white;
+}

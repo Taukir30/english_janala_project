@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Janala - Taukir</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+
+    <!-- daisyui CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <!-- tailwindcss CDN  -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- fontawsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="./style/style.css">
+</head>
+
+<body>
+
+    <!-- topbar-------- -->
+    <header>
+        <div class="navbar bg-[#EDF6FF] shadow-sm">
+            <div class="navbar-start pl-8">
+                <div class="dropdown">
+                    <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h8m-8 6h16" />
+                        </svg>
+                    </div>
+                    <ul tabindex="0"
+                        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                        <li><a><i class="fa-solid fa-circle-question"></i>FAQ</a></li>
+                        <li><a><i class="fa-solid fa-book-open"></i>Learn</a></li>
+                        <li><a><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a></li>
+                    </ul>
+                </div>
+                <a class="btn btn-ghost text-xl gap-0 px-0">
+                    <p class="text-base">English</p>
+                    <img src="./assets/logo.png" alt="" class="w-8">
+                    <span class="font-normal text-base">জানালা</span>
+                </a>
+            </div>
+            <div class="navbar-end hidden lg:flex ">
+                <ul class="menu menu-horizontal flex gap-4 px-10">
+                    <li>
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-circle-question"></i>FAQ</a>                        
+                    </li>
+                    <li>
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-book-open"></i>Learn</a>
+                    </li>
+                    <li>
+                        <a class="btn text-[#422AD5] bg-[#EDF6FF] hover:bg-[#ddd8ff] border-[#422AD5]"><i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</a>
+                    </li>
+                </ul>
+            </div>         
+        </div>
+    </header>
+    <!-- end topbar-------- -->
+
+    <!-- banner-------- -->
+    <section>
+        <div class="wrapper flex gap-5 flex-col-reverse md:flex-row">
+            <div class="content flex flex-col gap-5 justify-center text-center md:text-left w-full md:w-1/2">
+                <h1 class="text-3xl font-bold"><span class="text-[#00BCFF]">English</span> is Easy!!</h1>
+                <p class="siliguri w-full md:w-5/6 text-base/7 text-gray-800">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+                <input type="text" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="name" id="" placeholder="Enter Your Name">
+                <input type="password" class="w-full md:w-2/5 text-xs p-2 border border-gray-300 rounded-sm" name="pass" id="" placeholder="********">
+                <button class="btn btn-primary w-full md:w-1/5 text-xs font-light">Get Started</button>
+                
+            </div>
+            <div class="image w-full md:w-1/2">
+                <img src="./assets/hero-student.png" class="wrapper" alt="">
+            </div>
+        </div>
+    </section>
+    <!-- /end banner-------- -->
+
+    <!-- level button section------ -->
+     <section class="pt-15 my-5">
+        <div class="wrapper">
+            <h1 class="text-3xl font-bold text-center"><span class="text-[#00BCFF]">Let's </span>Learn Vocabularies</h1>
+            <div id="level_container" class="level_container flex flex-wrap gap-5 justify-center my-5 py-5">
+
+            </div>
+        </div>
+     </section>
+    <!-- /end level button section- -->
+
+    <!-- lessons section------ -->
+     <section class="my-5">
+        <div id="word_container" class="wrapper text-center bg-gray-100 rounded-2xl p-5">
+            <p class="mt-5 text-xs text-gray-600 p-5">আপনি এখনো কোন Lesson Select করেন নি</p>
+            <h2 class="mb-5 text-2xl font-semibold">একটি Lesson Select করুন।</h2>
+
+            <div class="card_holder w-full grid grid-cols-1 md:grid-cols-3 gap-5">
+
+                <!-- <div class="card bg-white p-8">
+                    <h2 class="text-xl font-bold inter my-5">Eager</h2>
+                    <p class="text-xs font-semibold ">Meaning /Pronounciation</p>
+                    <h2 class="text-xl font-bold siliguri text-gray-600 my-5">"আগ্রহী / ইগার"</h2>
+                    <div class="card_bottom flex justify-between mt-5">
+                        <div class="btn_left p-2 bg-gray-200 hover:cursor-pointer rounded-md"><i class="fa-solid fa-circle-info"></i></div>
+                        <div class="btn_right p-2 bg-gray-200 hover:cursor-pointer rounded-md"><i class="fa-solid fa-volume-high"></i></div>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+     </section>
+    <!-- /end lessons section------ -->
+
+
+
+    <!-- JS links---- -->
+    <script src="./js/index.js"></script>
+</body>
+
+</html>

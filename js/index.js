@@ -61,7 +61,7 @@ const showWords = (words)=>{
         cardHolder.innerHTML += `<div class="card bg-white p-8 shadow-sm">
                                 <h2 class="text-xl font-bold inter my-3">${word.word? word.word:"not found" }</h2>
                                 <p class="text-xs font-semibold ">Meaning /Pronounciation</p>
-                                <h2 class="text-xl font-bold siliguri text-gray-600 my-5">"${word.meaning? word.meaning:"not found"} / ${word.pronunciation? word.pronunciation:"not found"}"</h2>
+                                <h2 class="text-xl font-bold siliguri text-gray-600 my-5 flex-grow-1">"${word.meaning? word.meaning:"not found"} / ${word.pronunciation? word.pronunciation:"not found"}"</h2>
                                 <div class="card_bottom flex justify-between mt-5">
                                     <div onclick="loadDetail(${word.id})" class="btn_left p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-circle-info"></i></div>
                                     <div onclick="pronounceWord('${word.word}')" class="btn_right p-2 bg-[#E8F4FF] hover:cursor-pointer hover:bg-[#bee0ff] rounded-md"><i class="fa-solid fa-volume-high"></i></div>
